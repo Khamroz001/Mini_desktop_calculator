@@ -1,13 +1,13 @@
-/*.vbox-background {*/
-/*    -fx-background-image: url("icons/background_image.jpg");*/
-/*    -fx-background-repeat: no-repeat;*/
-/*    -fx-background-size: cover;*/
-/*    -fx-background-color: rgba(255, 255, 255, 0.5); !* Белый цвет с 50% прозрачностью *!*/
-/*    -fx-background-blend-mode: overlay;*/
-/*}*/
-/*.hbox-background {*/
-/*    -fx-background-image: url("icons/background_hbox.jpg");*/
-/*    -fx-background-repeat: no-repeat;*/
-/*    -fx-background-size: cover;*/
-/*    -fx-background-color: rgba(0, 0, 0, 0.5);*/
-/*}*/
+.vbox-background {
+    -fx-background-image: url("icons/background_image.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-color: rgba(255, 255, 255, 0.5); /* Белый цвет с 50% прозрачностью */
+    -fx-background-blend-mode: overlay;
+}
+.hbox-background {
+    -fx-background-image: url("icons/background_hbox.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
