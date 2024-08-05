@@ -1,16 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="uz.kh.mini_calculator.CalculatorController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="236.0" spacing="20" styleClass="vbox-background" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uz.kh.mini_calculator.CalculatorController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <!-- Display -->
+    <VBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+        <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="220.0" styleClass="hbox-background">
+            <Label fx:id="resultLabel" style="-fx-font-size: 48;" styleClass="resultLab" text="0">
+                <textFill>
+                    <LinearGradient endX="1.0" endY="1.0" startY="0.8076009501187649">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="1.0" green="0.24705882370471954" blue="0.239215686917305" />
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color />
+                                </color>
+                            </Stop>
+                        </stops>
+                    </LinearGradient>
+                </textFill></Label>
+        </HBox>
+    </VBox>
+
+    <!-- Buttons -->
+    <GridPane hgap="10" style="-fx-padding: 10;" vgap="10">
+        <!-- First Row -->
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="7" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+        <!-- Second Row -->
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="4" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+        <!-- Third Row -->
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+        <!-- Fourth Row -->
+        <Button onAction="#handleNumber" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <!-- Operators Column -->
+        <Button onAction="#handleOperator" style="-fx-font-size: 24; -fx-background-color: #FF5349; -fx-text-fill: white;" text="+" textFill="#ff3f3d" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.rowSpan="1" />
+        <Button onAction="#handleOperator" prefHeight="45.0" prefWidth="47.0" style="-fx-font-size: 24; -fx-background-color: #FF5349; -fx-text-fill: white;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="1" />
+        <Button onAction="#handleOperator" style="-fx-font-size: 24; -fx-background-color: #FF5349; -fx-text-fill: white;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="1" />
+        <Button onAction="#handleOperator" style="-fx-font-size: 24; -fx-background-color: #FF5349; -fx-text-fill: white;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="1" />
+
+        <!-- Clear Button -->
+        <Button onAction="#handleClear" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="C" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Button onAction="#handleEquals" style="-fx-font-size: 24; -fx-background-color: #E5E5E5;" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
 </VBox>
