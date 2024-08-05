@@ -14,8 +14,8 @@ public class CalculatorApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/calculator-view.fxml"));
         primaryStage.setTitle("Calculator");
-//        Image logo = new Image(getClass().getResourceAsStream("/icons/logo.png"));
-//        primaryStage.getIcons().add(logo);
+        Image logo = new Image(getClass().getResourceAsStream("/icons/logo.png"));
+        primaryStage.getIcons().add(logo);
         primaryStage.setScene(new Scene(root, 236, 400));
         primaryStage.setResizable(false);
         primaryStage.show();
